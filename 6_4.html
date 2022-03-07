@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>6_1</title>
+</head>
+<body>
+	<p>
+		<button onclick="start();">Start</button>
+		<button onclick="finish();">Finish</button>
+
+	</p>
+	<p id="time">経過時間</p>
+
+	<script>
+		const time=document.getElementById("time");
+		let startTime;
+		let finishTime;
+		function start(){
+			const now =new Date();
+			startTime=now.getTime();
+
+		}
+		function finish(){
+
+				const now =new Date();
+				 let finishTime=now.getTime();
+				time.innerHTML="経過した時間は"+(finishTime-startTime)/1000+"秒";
+		}
+
+	</script>
+</body>
+</html>

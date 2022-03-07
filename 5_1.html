@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>5_1</title>
+</head>
+<body>
+	<h1>計算機を作成</h1>
+	<p>n1: <input id="input1" type="text"></p>
+	<p>n2: <input id="input2" type="text"></p>
+
+	<p>
+		<button onclick="btn(1)">+</button>
+		<button onclick="btn(2)">-</button>
+		<button onclick="btn(3)">*</button>
+		<button onclick="btn(4)">/</button>
+
+	</p>
+	<p id="output1">結果表示</p>
+	<script>
+		const input1=document.getElementById("input1");
+		const input2=document.getElementById("input2");
+		const output1=document.getElementById("output1");
+
+		function btn(i){
+
+			let n1=Number(input1.value);
+			let n2=Number(input2.value)
+			let n3;
+			if(i===1){n3=n1+n2;}
+			if(i===2){n3=n1-n2;}
+			if(i===3){n3=n1*n2;}
+			if(i===4){n3=n1/n2;}
+			output1.innerHTML=n3;
+
+		}
+
+
+	</script>
+
+</body>
+</html>

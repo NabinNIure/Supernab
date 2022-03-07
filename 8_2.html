@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>8_1</title>
+</head>
+<body>
+<video src="video.mp4" id="video1"></video>
+	<p>
+
+		<button onclick="video1.play();">再生</button>
+		<button onclick="video1.pause();">一時停止</button>
+		<button onclick="video1.currentTime=0;video1.play();">最初から</button>
+		<button onclick="video1.volume-=0.2;">音を小さく</button>
+		<button onclick="video1.volume+=0.2;">音を大きく</button>
+		<button onclick="video1.playbackRate-=0.5">ゆっくり</button>
+		<button onclick="video1.playbackRate+=0.5;">速く</button>
+	</p>
+	<script>
+
+		const video1=document.getElementById("video1");
+	</script>
+</body>
+</html>

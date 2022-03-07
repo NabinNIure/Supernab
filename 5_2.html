@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>5_1</title>
+</head>
+<body>
+	<h1>科目合計点数</h1>
+	<p>JAVA SCRIPT： <input id="input1" type="text"></p>
+	<p> python：<input id="input2" type="text"></p>
+	<p> データ構造：<input id="input3" type="text"></p>
+	<p> セミナル：<input id="input4" type="text"></p>
+	<p> コンピューター教育：<input id="input5" type="text"></p>
+	<p> 画像情報処理：<input id="input6" type="text"></p>
+	<p>
+		<button onclick="btn(1)">合計点数</button>
+
+
+
+	</p>
+	<p id="output1">合計点数表示</p>
+	<script>
+		const input1=document.getElementById("input1");
+		const input2=document.getElementById("input2");
+		const input3=document.getElementById("input3");
+		const input4=document.getElementById("input4");
+		const input5=document.getElementById("input5");
+		const input6=document.getElementById("input6");
+		const output1=document.getElementById("output1");
+
+		function btn(i){
+
+			let n1=Number(input1.value);
+			let n2=Number(input2.value);
+			let n3=Number(input3.value)
+			let n4=Number(input4.value)
+			let n5=Number(input5.value)
+			let n6=Number(input6.value)
+
+			let n7;
+			if(i===1){n7=n1+n2+n3+n4+n5+n6;}
+
+			output1.innerHTML=n7;
+
+		}
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>JS-4</title>
+</head>
+<body>
+
+	<input type="text" name="text" id="input">
+	<button onclick="btn1();">GO!</button>
+	<p id="output">output</p>
+	<script>
+		const input1=document.getElementById("input");
+		const output1=document.getElementById("output");
+		function btn1(){
+			output1.innerHTML=input1.value;
+		}
+	</script>
+	
+</body>
+</html>

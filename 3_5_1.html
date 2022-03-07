@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS-2</title>
+
+</head>
+
+
+<body>
+	<button onclick="btn1();">答えここ！！</button>
+	<p>あなたの名前歯なんですか？</p>
+<p id="output">	上のボタンを押して解答を見る</p>
+<script>
+	const output1=document.getElementById("output");
+	let msg1="私の名前は"
+	let  fname="ナビン";
+	let  lname="ニウレ"
+	let msg2="です。"
+	let  fullname=msg1+fname+lname+msg2;
+	function btn1(){
+
+		output1.innerHTML=fullname;
+	}
+</script>
+</body>
+</html>

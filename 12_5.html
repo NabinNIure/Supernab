@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12.4_j</title>
+	<style>
+		#canvus1{
+			border: 1px solid gray;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvus1" width="300px" height="300px"></canvas>
+
+	<script>
+		const canvus1=document.getElementById("canvus1");
+		const c=canvus1.getContext("2d");
+		c.fillStyle="red";
+		c.fillRect(0,0,50,50);
+		c.fillRect(50,50,50,50);
+
+
+		c.beginPath();
+		c.moveTo(150,0);
+		c.lineTo(100,100);
+		c.lineTo(200,100);
+		c.closePath();
+		c.fillStyle=("orange");
+		c.fill();
+
+		c.beginPath();
+		c.moveTo(200,0);
+		c.lineTo(300,100);
+		c.lineWidth=5;
+		c.strokeStyle="red";
+		c.stroke();
+
+		let angle1=45;
+		let angle2=315;
+
+		let red1=angle1/180*Math.PI;
+		let red2=angle2/180*Math.PI;
+
+
+		c.beginPath();
+		c.moveTo(50,150);
+		c.arc(50,150,50,red1,red2,false);
+		c.closePath();
+		c.fillStyle="green";
+		c.fill();
+
+		c.lineWidth=3;
+		c.strokeStyle="black";
+		c.stroke();	
+	</script>
+</body>
+</html>

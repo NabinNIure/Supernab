@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>JS-2</title>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+				div{
+					border: 1px solid red;
+					width: 200px;
+					height: 200px;
+				}
+				#box1 {
+					background-image:url(img1.png) ;
+			}
+			/* ここから下にお記述 */
+			#parent{
+				transform-style: preserve-3d;
+				perspective: 200px;
+				width: 200px;
+				height: 200px;
+				margin: 50px auto;
+				border: 1px soplid red;
+			}
+
+			#box1{
+				animation: mystory 2s linear 0s infinite alternate;
+				animation-fill-mode: both;
+
+			}
+			@keyframes mystory {
+				0%{transform:rotateY(-40deg) translateX(-300px);}
+				100%{transform:rotateY(40deg) translateX(300px);}
+			}
+
+		</style>
+	</head>
+
+	</body>
+	<body>
+		<div id="parent">
+			<div id="box1"></div>
+		</div>
+	</body>
+
+</html>

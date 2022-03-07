@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>JS-2</title>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+				div{
+					border: 1px solid red;
+					width: 200px;
+					height: 200px;
+					margin: 50px auto;
+				}
+				#box1 {
+					background-image:url(img1.png) ;
+			}
+			/* ここから下にお記述 */
+				#box1{
+					animation:mystory 5s linear 0s 1 normal;
+					animation-fill-mode: both;
+			}
+			@keyframes mystory{
+			0%{
+				transform: translateX(-300px);}
+				
+			100%{
+				transform: translate(300px);}
+			}
+
+		</style>
+	</head>
+
+	</body>
+	<body>
+		<div id="box1"></div>
+	</body>
+
+</html>

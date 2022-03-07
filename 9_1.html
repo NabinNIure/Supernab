@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9_1</title>
+</head>
+<body>
+	<p >key:<input type="text" id="input1"></p>
+	<p >key:<input type="text" id="input2"></p>
+	<p>
+		<button onclick="save()">保存</button>
+		<button onclick="read()">読出</button>
+		<button onclick="delet()">消徐</button>
+		<button onclick="alldelete()">全部消徐</button>
+
+
+	</p>
+<script>
+
+	const input1=document.getElementById("input1");
+	const input2=document.getElementById("input2");
+
+
+function save(){
+	localStorage.setItem(input1.value,input2.value)
+}
+function read(){
+
+	input2.value=localStorage.getItem(input1.value);
+}
+function delet(){
+localStorage.removeItem(input1.value);
+}
+function alldelete(){
+	localStorage.clear();
+}
+
+</script>
+</body>
+</html>

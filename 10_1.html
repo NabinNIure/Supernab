@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>J_10_1</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		div{
+			border: 1px solid gray;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			margin:50px auto;
+			text-align: center;
+			transition: all 1s linear;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"onclick="btn1();">Sample</div>
+
+ <script>
+	 const box1=document.getElementById("box1");
+
+	 function btn1(){
+		 box1.style.color="red";
+		 box1.style.width="300px";
+		 box1.style.hight="250px";
+		 box1.style.linehight="250px";
+		 box1.style.backgroundColor="yellow";
+		 box1.style.transform="rotateZ(360)";
+	 }
+ </script>
+</body>
+</html>

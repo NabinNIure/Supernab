@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS-2</title>
+</head>
+<body>
+	<input type="text" id="input"><button onclick="btn1();">結果</button>
+	<p id="output">もしそうなければ</p>
+	<script>
+		const input=document.getElementById("input");
+		const output=document.getElementById("output");
+
+		let n1=60;
+		function btn1(){
+		if(Number(input.value)===n1){
+			output.innerHTML="正解"
+		}else{
+			output.innerHTML="残念！！"
+		}
+	}
+	</script>
+	
+</body>
+</html>

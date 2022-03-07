@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6_1</title>
+</head>
+<body>
+	<p id="output">現在の時間</p>
+	<script>
+		const output=document.getElementById("output");
+		const now =new Date();
+		let y=now.getFullYear();
+		let m=now.getMonth();
+		let d=now.getDate();
+		let w=now.getDay();
+		let h=now.getHours();
+		let i=now.getMinutes();
+		let s=now.getSeconds();
+		const week=new Array("日","月","火","水","木","金","土");
+		output.innerHTML=y+"年"+m+"月"+d+"日"+w+week[w]+"曜日"+h+"時"+i+"分"+s+"秒";
+ 	
+	</script>
+</body>
+</html>

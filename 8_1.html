@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>8_1</title>
+</head>
+<body>
+	<audio src="audio.mp3" id="audio1"></audio>
+
+	<p>
+
+		<button onclick="audio1.play();">再生</button>
+		<button onclick="audio1.pause();">停止</button>
+		<button onclick="audio1.currentTime=0;audio1.play();">最初から</button>
+		<button onclick="audio1.volume-=0.2;">音を小さく</button>
+		<button onclick="audio1.volume+=0.2;">音を大きく</button>
+		<button onclick="audio1.playbackRate-=0.5">ゆっくり</button>
+		<button onclick="audio1.playbackRate+=0.5;">速く</button>
+
+
+	</p>
+	<script>
+	 const audio1=document.getElementById("audio1");
+	</script>
+</body>
+</html>

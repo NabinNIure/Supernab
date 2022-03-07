@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>7_1</title>
+</head>
+<body>
+
+	<audio src="audio2.mp3" id="audio1"></audio>
+	<audio src="audio3.mp3" id="audio2"></audio>
+	<audio src="audio4.mp3" id="audio2"></audio>
+
+	<p id="output">じゃんけん。。</p>
+	<button onclick='janken("Rock");'>Rock</button>
+	<button onclick='janken("Paper");'>Paper</button>
+	<button onclick='janken("Cizzer");'>Cizzer</button>
+	<script>
+		const output=document.getElementById("output");
+
+		var sound2=new audio2("audio2.mp3");
+		var sound3=new audio3("audio3.mp3");
+		var sound4=new audio4("audio4.mp3");
+
+
+
+		let jaudge;
+		let point=0;
+		function janken(player){
+			let pc=Math.round(Math.random()*3);
+			if(pc===1) {pc="Rock"}
+			if(pc===2) {pc="Paper"}
+			if(pc===3) {pc="Cizzer"}
+
+			if(player==="Rock"){
+				if(pc==="Rock"){jaudge="EQUAL";sound2.play();}
+				if(pc==="paper"){jaudge="WIN";point++;sound3.play();}
+				if(pc==="Cizzer"){jaudge="LOSE";point--;sound4.play();}
+			}
+			if(player==="Paper"){
+				if(pc==="Paper"){jaudge="EQUAL";sound2.play();}
+				if(pc==="Cizzer"){jaudge="WIN";point++;sound3.play();}
+				if(pc==="Rock"){jaudge="LOSE";point--;sound4.play();}
+			}
+			if(player==="Cizzer"){
+				if(pc==="Cizzer"){jaudge="EQUAL";sound2.play();}
+				if(pc==="Rock"){jaudge="WIN";point++;sound3.play();}
+				if(pc==="Paper"){jaudge="LOSE";point--;sound4.play();}
+			}
+			output.innerHTML=
+			"<p>PCは"+ pc + "</p>" +
+			 "<p>あなたは"+ player +"</p>"+
+			 "<p>あなたは"+ jaudge +"</p>"+
+			 "<p>得点"+ point +"</p>";
+
+		}
+
+	</script>	
+</body>
+</html>

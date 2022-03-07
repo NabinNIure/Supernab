@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>j_11_1</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		div{
+			background-color: red;
+			width: 20px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+<div id="box1"></div>
+
+<script>
+	const box1=document.getElementById("box1");
+	box1.addEventListener("mousemove",move);
+	 function move(e){
+		 let x=e.clientX;
+		 let y=e.clientY;
+		 box1.style.transform="translate("+(x-10)+"px,"+(y-10)+"px)";
+		 box1.innerHTML="x="+x+"px/y="+y+"px";
+	 }
+</script>
+</body>
+</html>
