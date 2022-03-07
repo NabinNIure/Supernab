@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>JS13_1</title>
+	<style>
+		#canvas1{border:1px solid rgb(255, 10, 10); background-color: skyblue;}
+	</style
+</head>
+<body>
+	<canvas id="canvas1" width="300" height="300"></canvas>
+	<script>
+		const nab=document.getElementById("canvas1");
+		const c=nab.getContext("2d");
+		const circle1={x:200,y:100,w:0,h:0,color:"orange",angle:0,scaleX:-1,scaleY:1
+	,dx:1,dy:1};
+
+	const rect1={x:100,y:100,w:50,h:50,color:"indigo",angle:0,scaleX:1,scaleY:1
+	,dx:1,dy:1};
+
+	setInterval(loop,5);
+
+	function loop(){
+		draw(circle1);
+		draw(rect1);
+
+		cal(circle1);
+		cal(rect1);
+	}
+	function cal(obj){
+		obj.x+=obj.dx;
+		obj.y+=obj.dy;
+
+
+		if(
+			(obj.x<obj.w/2)||(canvas1.width-obj.w/2<obj.x)
+		){
+			obj.dx*=-1;
+		}
+
+		if(
+			(obj.y<obj.h/2)||(canvas1.height-rect1.h/2<obj.y)
+		){
+			obj.dy*=-1;
+		}
+	}
+function draw(obj){
+	c.save();
+	c.translate(obj.x,obj.y);
+	c.rotate(obj.angle/180*Math.PI);
+	c.scale(obj.scaleX,obj.scaleY);
+	c.beingpath();
+	c.rotate(obj.w/2,obj.h/2,30,0,2*Math.PI,false);
+	c.fillStyle=obj.color;
+	c.fill();
+	c.lineWidth=3;
+	c.strokeStyle='obj.color';
+	c.stroke();
+	c.restore();
+}
+	</script>
+</body>
+</html>

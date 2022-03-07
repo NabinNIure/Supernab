@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13_５</title>
+</head>
+<style>
+#canvas1{border: 1px solid red;}
+</style>
+<body>
+	<canvas id="canvas1" height="300" width="300"></canvas>
+
+	<script>
+	const canvas1=document.getElementById("canvas1");
+	const c=canvas1.getContext("2d");
+	const rect1={x:150,y:150,w:50,h:50,color:"red"}
+    const centerX = canvas1.width / 2;
+    const centerY = canvas1.height / 2;
+    const radius = 70;
+
+      c.beginPath();
+      c.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      c.fillStyle = 'green';
+      c.fill();
+      c.lineWidth = 5;
+      c.strokeStyle = '#003300';
+		rectDraw(rect1);
+		rectDraw(radius);
+
+		function rectDraw(obj){
+		c.fillStyle=obj.color;
+		c.fillRect(obj.x,obj.y,obj.h,obj.w);
+		c.stroke();
+			}
+	</script>
+</body>
+</html>

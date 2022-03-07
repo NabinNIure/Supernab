@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15_1</title>
+	<style>
+		#canvas1{
+			border: 1px solid gray;
+			background-image: url(bg1.png);
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas1" width="400" height="400"></canvas>
+	<audio src="audio1.mp3" id="audio1"></audio>
+	<script>
+
+	
+		const canvas1=document.getElementById("canvas1");
+		const c=canvas1.getContext("2d");
+
+		//効果音取り込み
+		const audio1=document.getElementById("audio1");
+		//初期化
+		const target={x:200,y:100,w:50,h:50,dir:1,color:"orange"}
+		const player={x:200,y:300,w:50,h:50,color:"skyblue"}
+		const ball={x:-10,y:-10,w:5,h:5,color:"pink"}
+
+		let point=0;
+
+		// 実行
+
+		setInterval(loop,50);
+			function loop(){
+
+
+		// 消法
+
+				c.clearRect(0,0,canvas1.width,canvas1.height);
+
+		//描画
+				rectDraw(target);
+				rectDraw(player);
+				rectDraw(ball);
+
+		// ポイント
+				c.fillStyle="black";
+				c.font="20px sans-serif";
+				c.fillText(point,0,400);
+
+		// 計算
+				target.x += target.dir;
+				ball.y-=5;
+				if ((target.x<target.w/2)||(canvas1.width-target.w/2<target.x)) {
+					target.dir==-1;
+				}
+
+				if ((100===ball.y)&&(Math.abs(target.x-ball.x)<25)) {
+					point++;
+					audio1.play();
+				}
+			}
+				
+	
+		function rectDraw(obj){
+			c.save();
+			c.translate(obj.x,obj.y);
+			c.rotate(obj.angle/180*Math.PI);
+			c.scale(obj.scaleX,obj.scaleY);
+			c.fillStyle=obj.color;
+			c.fillRect(0-obj.w/2,0-obj.h/2,obj.w,obj.h);
+
+			c.restore();
+		}
+
+	
+	</script>
+</body>
+</html>

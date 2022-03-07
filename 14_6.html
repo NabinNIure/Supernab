@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13_５</title>
+</head>
+<style>
+#canvas1{border: 1px solid red;}
+</style>
+<body>
+	<canvas id="canvas1" height="300" width="300"></canvas>
+
+	<script>
+	const canvas1=document.getElementById("canvas1");
+	const c=canvas1.getContext("2d");
+	const rect1={x:150,y:150,w:50,h:50,color:"red"}
+    const centerX = canvas1.width / 3;
+    const centerY = canvas1.height / 3;
+    const radius = 40;
+
+      c.beginPath();
+      c.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      c.fillStyle = 'green';
+      c.fill();
+      c.lineWidth = 5;
+      c.strokeStyle = '#003300';
+		rectDraw(rect1);
+		rectCal(rect1)
+
+		function rectCal(obj){
+		obj.x+=obj.dx;
+		obj.y+=obj.dy;
+		if(
+			(obj.x<obj.w/2)||(canvas1.width-obj.w/2<obj.x)
+		){
+			obj.dx*=-1;
+		}
+
+		if(
+			(obj.y<obj.h/2)||(canvas1.height-rect1.h/2<obj.y)
+		){
+			obj.dy*=-1;
+		}
+
+
+		
+		obj.centerX+=obj.dx;
+		obj.centerY+=obj.dy;
+		if(
+			(obj.centerX<obj.w/2)||(canvas1.width-obj.w/2<obj.centerX)
+		){
+			obj.dx*=-1;
+		}
+
+		if(
+			(obj.centerY<obj.h/2)||(canvas1.height-rect1.h/2<obj.centerY)
+		){
+			obj.dy*=-1;
+		}
+	}
+
+		function rectDraw(obj){
+		c.fillStyle=obj.color;
+		c.fillRect(obj.x,obj.y,obj.h,obj.w);
+		c.stroke();
+			}
+	</script>
+</body>
+</html>

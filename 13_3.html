@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13_2</title>
+</head>
+<style>
+#canvas1{border: 1px solid red;}
+</style>
+<body>
+	<canvas id="canvas1" height="300" width="300"></canvas>
+
+	<script>
+		const canvas1=document.getElementById("canvas1");
+		const c=canvas1.getContext("2d");
+		const centerX = canvas.width / 2;
+    	const centerY = canvas.height / 2;
+      	const radius = 70;
+		
+		const rect1={x:125,y:125,w:50,h:50,color:"red"}
+		
+
+
+			rectDraw();
+			radius();
+
+
+			function rectDraw(){
+		c.fillStyle=rect1.color;
+		c.fillRect(rect1.x,rect1.y,rect1.h,rect1.w);
+			}
+
+		function radius(){
+			context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      cont
+		}
+		
+
+
+	</script>
+</body>
+</html>
